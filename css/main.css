@@ -1,0 +1,118 @@
+body {
+    padding-top: 5.5rem;
+    background-color: #eeeeee;
+}
+
+.blink_once {
+    animation: blinker 1s linear 1;
+}
+@keyframes blinker {  
+    50% { opacity: 0; }
+}
+
+.custom-control.custom-radio.mr-auto{
+    padding-left: 0;
+    padding-right: 5px;
+    text-align: right;
+}
+.custom-control.custom-radio.mr-auto > label.custom-control-label {
+  position: relative;
+  padding-right: 1.5rem;
+}
+.custom-control.custom-radio.mr-auto > label.custom-control-label::before, 
+.custom-control.custom-radio.mr-auto > label.custom-control-label::after{
+  right: 0;
+  left: auto;
+}
+
+.custom-control.custom-switch {
+    padding-left: 2.25rem;
+}
+.custom-control.custom-switch.mr-auto {
+    padding-left: 0rem;
+    padding-right: 2.25rem;
+}
+.custom-control.custom-switch.mr-auto > label.custom-control-label::before {
+    left: auto;
+    right: -2.25rem;
+}
+.custom-control.custom-switch.mr-auto > label.custom-control-label::after {
+    left: auto;
+    right: -1.35rem;
+}
+
+#transactionData textarea:focus, 
+#transactionData textarea.form-control:focus, 
+#transactionData input.form-control:focus, 
+#transactionData input[type=text]:focus, 
+#transactionData input[type=password]:focus, 
+#transactionData input[type=email]:focus, 
+#transactionData input[type=number]:focus, 
+#transactionData [type=text].form-control:focus, 
+#transactionData [type=password].form-control:focus, 
+#transactionData [type=email].form-control:focus, 
+#transactionData [type=tel].form-control:focus, 
+#transactionData [contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #FFFFFF !important;
+  outline: #FFFFFF auto 0px;
+}
+
+.green {
+    color: rgb(15, 207, 143);
+    font-weight: 680
+}
+
+.modal-backdrop
+{
+    opacity:0.9 !important;
+}
+.modal-dialog {
+    height: 50%;
+    
+}
+.modal-dialog > .modal-content {
+    height: 100%;
+}
+
+.modal-dialog > .modal-content > .modal-body {
+    padding: 0;
+}
+
+.modal-dialog > .modal-content > .modal-body button.close {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.settingsBar {
+    background-color: rgba(0,0,0,0.2);
+    padding: 5px 15px;
+    margin: 25px 0;
+    cursor: pointer;
+}
+
+@media(max-width:765px) {
+    .mobile {
+        padding-top: 40px
+    }
+}
+
+@media (max-width: 765px) {
+    .dropdown-toggle {
+        display: none;
+    }
+
+    .dropdown-menu {
+        display: block;
+        position: relative;
+        border-width: 0;
+        padding: 0;
+        margin: 0;
+        background-color: rgba(255,255,255,0.1);
+    }
+
+    .dropdown-item {
+        padding: .5rem 0rem .5rem 15px;
+        color: #FFFFFF;
+    }
+}

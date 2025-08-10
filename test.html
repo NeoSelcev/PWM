@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>דף בדיקה</title>
+    <meta name="description" content="test page">
+    <meta name="author" content="max">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="icon" type="image/x-icon"
+        href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAolBMVEUAAABl79Vn7NVn7dVn7dVx48Zn7dRn7dVn7dVn7tVn7dVm7NRn7NVl6dIfVHgNLWBAmqNAmaENLF8gVXll6dNGqKsCFlIDF1NGpqpHqKtEpKgEGlRNt7ROuLVDo6cCF1IDGVQFHFZDoqcCF1MDGFMDGVMFHlcweY40gpNEo6gEGlUHIVlFpalFpqkEG1Vj59EcT3UII1o4ipk5i5kdUHVk59Gzk7PxAAAACnRSTlMBMpnn9Qyc/sT0t0jtYwAAALNJREFUGNNtj8kOwjAMRNOEpsUByuqw1xS37Dv8/6/hABcQc7A0Txrbo5Qo0qZWMzpSb8UWAJJEho1fPnXwUSMNxDZbWTvYTrfXt5J3A0Q/BBh5xIGLlIaxgMl0NhEwBq0MzBFzWiwoR5yDUfWkwHzJROxzLJJ6AGJL5pJ4GYCBwlO1Yl5X5AuJaNjwdgf7Iey2vJGlkTvQMQt/ZEc6yFllT+fLNYDb5f6w36+7NP5X7qf+ExzJECxhFv2zAAAAAElFTkSuQmCC" />
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>דף בדיקה</h1>
+                </div>
+                <div class="card-body">
+                    <div class="card bg-light text-dark mb-3">
+                        <h5 class="card-header">URL</h5>
+                        <div class="card-body">
+                            <input type="text" class="form-control url" id="url" placeholder="https://..." value="https://api-test.max.co.il/leumi-card/b2btestdmz/paywithmaxapi/v2.0/transaction">
+                        </div>
+                    </div>
+                    <div class="card bg-light text-dark mb-3">
+                        <h5 class="card-header">Method</h5>
+                        <div class="card-body">
+                            <select class="form-control border method" data-show-content="true">
+                                <option value="GET">GET</option>
+                                <option value="POST" selected>POST</option>
+                                <option value="HEAD">HEAD</option>
+                                <option value="PUT">PUT</option>
+                                <option value="DELETE">DELETE</option>
+                                <option value="CONNECT">CONNECT</option>
+                                <option value="OPTIONS">OPTIONS</option>
+                                <option value="TRACE">TRACE</option>
+                                <option value="PATCH">PATCH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card bg-light text-dark mb-3">
+                        <h5 class="card-header">
+                            Headers
+                            <button type="button" class="btn btn-warning btn-sm" onclick="addHeader(); return false;"
+                                style="float: right;">Add</button>
+                        </h5>
+                        <div class="card-body">
+                            <div class="card bg-light text-dark mb-5 Header" id="Header">
+                                <h5 class="card-header">
+                                    Header
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                        onclick="removeHeader(this); return false;"
+                                        style="float: right;">Remove</button>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Name</label>
+                                            <input type="text" class="form-control headerName" id="headerName"
+                                                placeholder="Header name" value="Content-Type">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Value</label>
+                                            <input type="text" class="form-control headerValue" id="headerValue"
+                                                placeholder="Header value" value="application/json">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-light text-dark mb-5 Header" id="Header">
+                                <h5 class="card-header">
+                                    Header
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                        onclick="removeHeader(this); return false;"
+                                        style="float: right;">Remove</button>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Name</label>
+                                            <input type="text" class="form-control headerName" id="headerName"
+                                                placeholder="Header name" value="ACCEPT">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Value</label>
+                                            <input type="text" class="form-control headerValue" id="headerValue"
+                                                placeholder="Header value" value="application/json">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-light text-dark mb-3">
+                        <h5 class="card-header">
+                            Query String
+                            <button type="button" class="btn btn-warning btn-sm" onclick="addQS(); return false;"
+                                style="float: right;">Add</button>
+                        </h5>
+                        <div class="card-body">
+                            <div class="card bg-light text-dark mb-5 Parameter" id="Parameter">
+                                <h5 class="card-header">
+                                    Parameter
+                                    <button type="button" class="btn btn-danger btn-sm"
+                                        onclick="removeQS(this); return false;" style="float: right;">Remove</button>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Name</label>
+                                            <input type="text" class="form-control parameterName" id="parameterName"
+                                                placeholder="Parameter name" value="client_id">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="headerName">Value</label>
+                                            <input type="text" class="form-control parameterValue" id="parameterValue"
+                                                placeholder="Parameter value" value="2aeabd13-ca61-41b6-8d1e-5157c86d5296">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card bg-light text-dark mb-3">
+                        <h5 class="card-header">Payload</h5>
+                        <div class="card-body">
+                            <textarea class="form-control payload" id="payload" placeholder="Payload">{"PgId":"23857V2V2N-VB2938V523-3285VB239","ClientDetails":{"Id":318023280,"IdType":0,"PhoneNumber":"0545491860","City":"תל אביב","Street":"ארלוזורוב","Zip":"123456","Email":"test@gmail.com","FirstName":"ג'ון","LastName":"סמיט"},"MerchantDetails":{"Id":"34AFF84T4EYKL","TaxId":"2352398629867","Name":"בית עסק מעולה","Url":"https://www.google.com","TerminalNumber":2385729,"Logo":"https://www.google.com/logo.jpeg"},"TransactionDetails":{"Id":"1234","Description":"עסקה הכי טובה בעולם","TotalAmount":"gBc","Coin":"NIS","Items":[{"Name":"Name 1","Quantity":1,"Description":"Description 1","TotalAmount":10,"Price":10.11},{"Name":"Name 2","Quantity":2,"Description":"Description 2","TotalAmount":40,"Price":20.12},{"Name":"Name 3","Quantity":3,"Description":"Description 3","TotalAmount":90,"Price":30.13}]},"ActionType":1,"TransId":"54b4f978-0eff-4ebc-a72e-c486a1388c12"}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="sendTestRequest(); return false;">Send Request</button>
+                    <button type="button" id="updateTransactionBtn" class="btn btn-dark btn-group-lg" style="width: 200px; float: right;" onclick="document.location.href = './gateway-demo.html'; return false;">
+                        Back to Payment Gateway
+                    </button>  
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Reslust</h1>
+                </div>
+                    <div class="card-body">
+                        <div class="card bg-light text-dark mb-3">
+                            <h5 class="card-header">Status</h5>
+                            <div class="card-body status"></div>
+                        </div>
+                        <div class="card bg-light text-dark mb-3">
+                            <h5 class="card-header">Status text:</h5>
+                            <div class="card-body statusText"></div>
+                        </div>
+                        <div class="card bg-light text-dark mb-3">
+                            <h5 class="card-header">Body</h5>
+                            <div class="card-body body"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="./scripts/jquery.js"></script>
+    <script type="text/javascript" src="./scripts/popper.js"></script>
+    <script type="text/javascript" src="./scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="./scripts/test.js"></script>
+</body>
+
+</html>

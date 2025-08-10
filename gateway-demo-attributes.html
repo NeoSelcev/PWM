@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        function onCardReady(obj) {
+            if (obj) {
+                console.log("onCardReady: " + JSON.stringify(obj));
+            }            
+        }
+        function onCardSuccess(obj) {
+            if (obj) {
+                console.log("onCardSuccess: " + JSON.stringify(obj));
+            }            
+        }
+        function onPWMError(obj) {
+            if (obj) {
+                console.log("onPWMError: " + JSON.stringify(obj));
+            }            
+        }
+        function onPWMLog(obj) {
+            if (obj) {
+                console.log("onPWMLog: " + JSON.stringify(obj));
+            }            
+        }
+    </script>
+</head>
+
+<body>
+    <div id="MAXpwmRoot" 
+         data-oncardreadycbfn="onCardReady" 
+         data-oncardsuccesscbfn="onCardSuccess" 
+         data-onerrorcbfn="onPWMError" 
+         data-onlogcbfn="onPWMLog" 
+         data-clientid="PUT HERE YOUR CLIENT ID" 
+         data-initmode="3" 
+         data-env="1"
+         data-pgid="5c34b0ea-d679-4826-bc42-a6f36f2f52c8" 
+         data-cd-id="PUT HERE USER ID IF YOU WANT IT TO BE SHOWN WITHIN A POPUP OR DELETE THIS ATTRIBUTE" 
+         data-cd-pn="PUT HERE USER PHONE NUMBER IF YOU WANT IT TO BE SHOWN WITHIN A POPUP OR DELETE THIS ATTRIBUTE"
+         data-cd-idtype="0" 
+         data-cd-fn="משה" 
+         data-cd-ln="כהן" 
+         data-cd-email="beitesekbaam@gmail.com" 
+         data-cd-city="תל אביב" 
+         data-cd-street="ארלוזורוב" 
+         data-cd-zip="1236987" 
+         data-md-id="d163ea99-c237-46c7-9a10-d5b4a5f06b93" 
+         data-md-taxid="123456789123" 
+         data-md-name="בית עסק" 
+         data-md-url="https://www.beitesekbaam.com" 
+         data-md-tn="789654159" 
+         data-md-logo="https://www.beitesekbaam.com/logo.jpeg" 
+         data-td-id="e0d708ef-29b9-46a2-b75b-bca04b6115a7" 
+         data-td-desc="עסקה" 
+         data-td-ta="500.55" 
+         data-td-coin="ILS" 
+         data-td-ipbw="true" 
+         data-td-nop="5" 
+         data-td-ftp="100.00" 
+         data-td-ktp="100.00" >
+    </div>
+    <script type="text/javascript" src="https://digitalcdn.max.co.il/pwm/scripts/1.0.3/pwm-sandbox.js"></script>
+</body>
+</html>

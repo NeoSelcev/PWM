@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        window["___pwm"] = window["___pwm"] || {};
+        ___pwm.data = {
+            "pgId": "5c34b0ea-d679-4826-bc42-a6f36f2f52c8",
+            "clientDetails": {
+                "id": 0, // PUT HERE USER ID IF YOU WANT IT TO BE SHOWN WITHIN A POPUP OR DELETE THIS PROPRETY
+                "idType": 0,
+                "phoneNumber": "0", // PUT HERE USER PHONE NUMBER IF YOU WANT IT TO BE SHOWN WITHIN A POPUP OR DELETE THIS PROPRETY
+                "email": "beitesekbaam@gmail.com",
+                "firstName": "משה",
+                "lastName": "כהן",
+                "city": "תל אביב",
+                "street": "ארלוזורוב",
+                "zip": "1236987"
+            },
+            "merchantDetails": {
+                "id": "d163ea99-c237-46c7-9a10-d5b4a5f06b93",
+                "taxId": "123456789123",
+                "name": "בית עסק",
+                "url": "https://www.beitesekbaam.com",
+                "terminalNumber": 789654159,
+                "logo": "https://www.beitesekbaam.com/logo.jpeg"
+            },
+            "transactionDetails": {
+                "id": "e0d708ef-29b9-46a2-b75b-bca04b6115a7",
+                "description": "עסקה",
+                "totalAmount": 500.00,
+                "coin": "ILS",
+                "isPaymentsByWebsite": true,
+                "numberOfPayments": 5,
+                "firstTashPayment": 100.00,
+                "keyTashPayment": 100.00,
+            }
+        };
+        function onCardReady(obj) {
+            if (obj) {
+                console.log("onCardReady: " + JSON.stringify(obj));
+            }
+        }
+        function onCardSuccess(obj) {
+            if (obj) {
+                console.log("onCardSuccess: " + JSON.stringify(obj));
+            }
+        }
+        function onPWMError(obj) {
+            if (obj) {
+                console.log("onPWMError: " + JSON.stringify(obj));
+            }
+        }
+        function onPWMLog(obj) {
+            if (obj) {
+                console.log("onPWMLog: " + JSON.stringify(obj));
+            }
+        }
+    </script>
+</head>
+
+    <body>
+        <div id="MAXpwmRoot" 
+             data-oncardreadycbfn="onCardReady" 
+             data-oncardsuccesscbfn="onCardSuccess"
+             data-onerrorcbfn="onPWMError" 
+             data-onlogcbfn="onPWMLog" 
+             data-clientid="PUT HERE YOUR CLIENT ID" 
+             data-initmode="1" 
+             data-env="1">
+        </div>
+        <script type="text/javascript" src="https://digitalcdn.max.co.il/pwm/scripts/1.0.3/pwm-sandbox.js"></script>ה
+    </body>
+</html>
